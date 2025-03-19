@@ -6,6 +6,7 @@ public class Alumno {
 	private String nombreApellido;
 	private int DNI;
 	private double notaFinal;
+	private Scanner sc;
 	
 	public String getNombreApellido() {
 		return nombreApellido;
@@ -40,6 +41,16 @@ public class Alumno {
 		//Alumno alumno1 = new Alumno();
 		Alumno alumno1 = new Alumno("Juan Pérez",47333234,7.5);
 		System.out.println(alumno1);
+		Alumno alumno2 = new Alumno("Pedro Pérez",8.5);
+		Alumno alumno3 = new Alumno("José Pérez",7);
+		System.out.println(alumno2);
+		System.out.println(alumno3);
+		if(alumno3.getDNI() == -1) {
+			System.out.print("Ingrese DNI: ");
+			int auxDNI = alumno3.sc.nextInt();
+			alumno3.setDNI(auxDNI);
+			System.out.println(alumno3);
+		}
 	}
 
 	public Alumno(String nombreApellido, int dNI, double notaFinal) {
@@ -49,8 +60,15 @@ public class Alumno {
 		this.notaFinal = notaFinal;
 	}
 	
+	public Alumno(String nombreApellido, double notaFinal) {
+		super();
+		this.nombreApellido = nombreApellido;
+		DNI = -1;
+		this.notaFinal = notaFinal;
+	}
+	
 	public Alumno() {
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		System.out.print("Ingrese nombre y apellido: ");
 		nombreApellido = sc.nextLine();
 		System.out.print("Ingrese DNI: ");
