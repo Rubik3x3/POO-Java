@@ -38,16 +38,20 @@ public class Alumno {
 	}
 
 	public static void main(String[] args) {
-		//Alumno alumno1 = new Alumno();
-		Alumno alumno1 = new Alumno("Juan Pérez",47333234,7.5);
-		System.out.println(alumno1);
-		Alumno alumno2 = new Alumno("Pedro Pérez",8.5);
-		Alumno alumno3 = new Alumno("José Pérez",7);
+		Scanner sc = new Scanner(System.in);
+		
+		Alumno alumno1 = new Alumno(sc);
+		Alumno alumno2 = new Alumno("Juan Pérez",47333234,7.5);
+		Alumno alumno3 = new Alumno("Pedro Pérez",8.5);
+		Alumno alumno4 = new Alumno("José Pérez",7);
+		
 		System.out.println(alumno2);
 		System.out.println(alumno3);
+		System.out.println(alumno4);
+		
 		if(alumno3.getDNI() == -1) {
 			System.out.print("Ingrese DNI: ");
-			int auxDNI = alumno3.sc.nextInt();
+			int auxDNI = sc.nextInt();
 			alumno3.setDNI(auxDNI);
 			System.out.println(alumno3);
 		}
@@ -67,9 +71,8 @@ public class Alumno {
 		this.notaFinal = notaFinal;
 	}
 	
-	public Alumno() {
-		sc = new Scanner(System.in);
-		System.out.print("Ingrese nombre y apellido: ");
+	public Alumno(Scanner sc) {
+		System.out.print("Ingrese nombre y apellido: "); 
 		nombreApellido = sc.nextLine();
 		System.out.print("Ingrese DNI: ");
 		DNI = sc.nextInt();
