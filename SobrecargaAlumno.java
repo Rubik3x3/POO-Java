@@ -6,7 +6,6 @@ public class Alumno {
 	private String nombreApellido;
 	private int DNI;
 	private double notaFinal;
-	private Scanner sc;
 	
 	public String getNombreApellido() {
 		return nombreApellido;
@@ -43,14 +42,13 @@ public class Alumno {
 		Alumno alumno1 = new Alumno(sc);
 		Alumno alumno2 = new Alumno("Juan Pérez",47333234,7.5);
 		Alumno alumno3 = new Alumno("Pedro Pérez",8.5);
-		Alumno alumno4 = new Alumno("José Pérez",7);
 		
+		System.out.println(alumno1);
 		System.out.println(alumno2);
 		System.out.println(alumno3);
-		System.out.println(alumno4);
 		
 		if(alumno3.getDNI() == -1) {
-			System.out.print("Ingrese DNI: ");
+			System.out.print("Ingrese DNI de "+alumno3.getNombreApellido()+" (El DNI es igual a -1): ");
 			int auxDNI = sc.nextInt();
 			alumno3.setDNI(auxDNI);
 			System.out.println(alumno3);
